@@ -25,7 +25,7 @@
 		"PYTHON_PIP_VERSION": "19.0.3",
 		"PYTHON_VERSION": "3.7.2"
 	},
-	"command": "./example.py",
+	"command": "./spreadsheet_importer.py",
 	"author": "Kaleb Fischer",
 	"maintainer": "Kaleb Fischer",
 	"cite": "List citations here.",
@@ -35,7 +35,8 @@
 	"custom": {
 		"gear-builder": {
 			"category": "converter",
-			"image": "python:3"
+			"container": "beec8af7f724c5021c531ea0b596ce452e865f64aed86c6c9f1e1992e8b599fe",
+			"image": "gear-builder-watsgxkjzd-20190325104238"
 		}
 	}
 }

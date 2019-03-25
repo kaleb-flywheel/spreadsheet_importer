@@ -5,7 +5,7 @@ FROM python:3
 MAINTAINER Flywheel <support@flywheel.io>
 
 # Install pandas
-RUN pip install pandas flywheel-sdk requests
+RUN pip install pandas flywheel-sdk requests xlrd
 
 # Flywheel spec (v0)
 WORKDIR /flywheel/v0

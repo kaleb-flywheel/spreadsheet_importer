@@ -116,10 +116,10 @@ config_file_path = '/flywheel/v0/config.json'
 with open(config_file_path) as config_data:
     config = json.load(config_data)
 
-meta_filepath = config['inputs']['metadata-file']['location']['path']
-file_name = config['inputs']['metadata-file']['location']['path']
+meta_filepath = config['inputs']['spreadsheet-file']['location']['path']
+file_name = config['inputs']['spreadsheet-file']['location']['path']
 
-hierarchy_level = config['inputs']['metadata-file']['hierarchy']
+hierarchy_level = config['inputs']['spreadsheet-file']['hierarchy']['type']
 
 # prepare object for .metadata.json file
 metadata_json_out = {
