@@ -69,8 +69,10 @@ def export_to_dict(dataframe):
     :returns:  output_dic (dict) - the output object to be converted to json
 
     """
-    # for now, set subject count from first column
-    subject_count = dataframe[dataframe.columns[0]].count()
+    # for now, assume subject is the first column
+    subject_column = dataframe.columns[0]
+    # get the count of the non-null subjects
+    subject_count = dataframe[subject_column].count()
     # check that the above returned a value
     if type(subject_count) != np.int64:
         print("subject_count is not a valid integer. Dictionary not created.")
