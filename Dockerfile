@@ -1,11 +1,11 @@
 #flywheel/csv-import
 
-# Start with python 3.7
-FROM python:3.7
+# Start with python 3
+FROM python:3
 MAINTAINER Flywheel <support@flywheel.io>
 
 # Install pandas
-RUN pip install pandas
+RUN pip install pandas flywheel-sdk requests
 
 # Flywheel spec (v0)
 WORKDIR /flywheel/v0
