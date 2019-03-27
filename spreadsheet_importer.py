@@ -117,22 +117,21 @@ with open(config_file_path) as config_data:
     config = json.load(config_data)
 
 meta_filepath = config['inputs']['spreadsheet-file']['location']['path']
-file_name = config['inputs']['spreadsheet-file']['location']['path']
+file_name = config['inputs']['spreadsheet-file']['location']['name']
 
 hierarchy_level = config['inputs']['spreadsheet-file']['hierarchy']['type']
 
 # prepare object for .metadata.json file
 metadata_json_out = {
     hierarchy_level: {
-        'files': []
     }
 }
 
-meta_obj = {'name': file_name}
-meta_dataframe = import_file(meta_filepath)
-meta_obj['info'] = export_to_dict(meta_dataframe)
 
-metadata_json_out['acquisition']['files'].append(meta_obj)
+meta_dataframe = import_file(meta_filepath)
+meta_obj = export_to_dict(meta_dataframe)
+
+metadata_json_out[hierarchy_level]['info'] = meta_obj
 
 with open(output_filepath, 'w') as outfile:
     json.dump(metadata_json_out, outfile, separators=(', ', ': '), sort_keys=True, indent=4)
